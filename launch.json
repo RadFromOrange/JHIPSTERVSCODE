@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node-terminal",
+            "name": "zeribi",
+
+            "request": "launch",
+
+            "command": "./mvnw spring-boot:run -Dspring-boot.run.jvmArguments='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'"
+        },
+
+        // {
+        //     "type": "node-terminal",
+        //     "name": "wat",
+            
+
+        //     "request": "launch",
+        //     // "preLaunchTask": "mvnw spring-boot:run",
+        //     "command": "sleep 10"
+        // },
+
+        
+        {
+            "type": "java",
+            // "mainClass": "com.mycompany.myapp.BpdemoApp",
+            "hostName": "localhost",
+            "port": 5005,
+
+            "name": "Debug JHipster App",
+            "request": "attach",
+            // "cwd": "${workspaceFolder}",
+            // "console": "integratedTerminal",
+            //  "preLaunchTask": "zebi",
+            "preLaunchTask": "mvnw spring-boot:run",
+
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Compound",
+       
+            "configurations": ["zeribi","Debug JHipster App"],
+            
+        }
+    ]
+}
